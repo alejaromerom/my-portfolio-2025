@@ -1,28 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("about");
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleClickLink = (link: string) => {
-    setActiveLink(link);
   };
 
   return (
     <>
       <nav className="flex items-center justify-between flex-wrap border-b-2 border-accent shadow-lg p-6 bg-background">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <Link
+          <NavLink
             to="home"
             className="font-mono font-semibold text-3xl tracking-tight"
-            onClick={() => handleClickLink("home")}
           >
             I'm Ale
-          </Link>
+          </NavLink>
         </div>
         <div className="block lg:hidden">
           <button
@@ -47,48 +41,46 @@ export function NavBar() {
           }`}
         >
           <div className="text-sm lg:flex lg:gap-4">
-            <Link
+            <NavLink
               to="/about"
-              className={`p-2 text-lg block mt-4 lg:inline-block lg:mt-0 font-bold hover:text-white ${
-                activeLink === "about" ? "text-black bg-accent" : "text-primary"
-              }`}
-              onClick={() => handleClickLink("about")}
+              className={({ isActive }) =>
+                `${
+                  isActive ? "bg-accent" : ""
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+              }
             >
               About me
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/projects"
-              className={`p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white ${
-                activeLink === "projects"
-                  ? "text-black bg-accent"
-                  : "text-primary"
-              }`}
-              onClick={() => handleClickLink("projects")}
+              className={({ isActive }) =>
+                `${
+                  isActive ? "bg-accent" : ""
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+              }
             >
               Projects
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/technologies"
-              className={`p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white ${
-                activeLink === "technologies"
-                  ? "text-black bg-accent"
-                  : "text-primary"
-              }`}
-              onClick={() => handleClickLink("technologies")}
+              className={({ isActive }) =>
+                `${
+                  isActive ? "bg-accent" : ""
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+              }
             >
               Technologies
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/contact"
-              className={`p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white ${
-                activeLink === "contact"
-                  ? "text-black bg-accent"
-                  : "text-primary"
-              }`}
-              onClick={() => handleClickLink("contact")}
+              className={({ isActive }) =>
+                `${
+                  isActive ? "bg-accent" : ""
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+              }
             >
               Contact me
-            </Link>
+            </NavLink>
           </div>
         </div>
       </nav>
