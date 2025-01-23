@@ -22,7 +22,7 @@ export function NavBar() {
           <button
             id="boton"
             onClick={toggleMenu}
-            className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+            className="flex items-center px-3 py-2 border rounded text-accent border-accent hover:text-white hover:border-white"
           >
             <svg
               className="fill-current h-3 w-3"
@@ -46,7 +46,7 @@ export function NavBar() {
               className={({ isActive }) =>
                 `${
                   isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white`
               }
             >
               About me
@@ -56,7 +56,7 @@ export function NavBar() {
               className={({ isActive }) =>
                 `${
                   isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0  text-white hover:text-white`
               }
             >
               Projects
@@ -66,7 +66,7 @@ export function NavBar() {
               className={({ isActive }) =>
                 `${
                   isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0  text-white hover:text-white`
               }
             >
               Technologies
@@ -76,7 +76,7 @@ export function NavBar() {
               className={({ isActive }) =>
                 `${
                   isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 hover:text-white`
+                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0  text-white hover:text-white`
               }
             >
               Contact me
