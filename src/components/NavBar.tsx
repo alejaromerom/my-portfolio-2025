@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { navigation } from "../constants/navigation";
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export function NavBar() {
       <nav className="flex items-center justify-between flex-wrap border-b-2 border-accent shadow-lg p-6 bg-background">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <NavLink
-            to="home"
+            to="/"
             className="font-mono font-semibold text-3xl tracking-tight"
           >
             I'm Ale
@@ -41,46 +42,18 @@ export function NavBar() {
           }`}
         >
           <div className="text-sm lg:flex lg:gap-4">
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `${
-                  isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white`
-              }
-            >
-              About me
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                `${
-                  isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0  text-white hover:text-white`
-              }
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/technologies"
-              className={({ isActive }) =>
-                `${
-                  isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0  text-white hover:text-white`
-              }
-            >
-              Technologies
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `${
-                  isActive ? "bg-accent" : ""
-                } p-2 text-lg block mt-4 lg:inline-block lg:mt-0  text-white hover:text-white`
-              }
-            >
-              Contact me
-            </NavLink>
+            {navigation.map((nav) => (
+              <NavLink
+                to={nav.href}
+                className={({ isActive }) =>
+                  `${
+                    isActive ? "bg-accent" : ""
+                  } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white`
+                }
+              >
+                {nav.name}
+              </NavLink>
+            ))}
           </div>
         </div>
       </nav>
