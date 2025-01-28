@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { Aboutme } from "./components/Aboutme";
-import { Contactme } from "./components/Contactme";
+import { Aboutme } from "./pages/Aboutme";
+import { Contactme } from "./pages/Contactme";
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
-import { Projects } from "./components/Projects";
-import { Technologies } from "./components/Technologies";
+import { Projects } from "./pages/Projects";
+import { Technologies } from "./pages/Technologies";
 import { Home } from "./pages/Home";
 
 function App() {

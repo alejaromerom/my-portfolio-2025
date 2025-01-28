@@ -1,4 +1,4 @@
-import { redes } from "../constants/redes";
+import { constants } from "../constants/constants";
 
 export function Contactme() {
   return (
@@ -8,8 +8,9 @@ export function Contactme() {
           Interactua conmigo
         </h1>
         <div className="flex space-x-10 justify-center">
-          {redes.map((red) => (
+          {constants.redes.map((red) => (
             <a
+              key={red.name}
               href={red.href}
               target="_blank"
               rel="noopener noreferrer"

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { navigation } from "../constants/navigation";
+import { constants } from "../constants/constants";
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,8 +42,9 @@ export function NavBar() {
           }`}
         >
           <div className="text-sm lg:flex lg:gap-4">
-            {navigation.map((nav) => (
+            {constants.navigation.map((nav) => (
               <NavLink
+                key={nav.name}
                 to={nav.href}
                 className={({ isActive }) =>
                   `${
