@@ -9,17 +9,19 @@ export function NavBar() {
   };
 
   return (
-    <>
-      <nav className="flex items-center justify-between flex-wrap border-b-2 border-accent shadow-lg p-6 bg-background">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <NavLink
-            to="/"
-            className="font-mono font-semibold text-3xl tracking-tight"
-          >
-            I'm Ale
-          </NavLink>
+    <header className=" py-4 container mx-auto">
+      <nav className="w-full flex justify-between  items-center rounded-md border-2 border-accent shadow-lg py-2 px-3 bg-primary/10 backdrop-blur-md">
+        <div>
+          <div className="flex items-center flex-shrink-0 text-white mr-6">
+            <NavLink
+              to="/"
+              className="font-mono font-semibold text-3xl tracking-tight"
+            >
+              I'm Ale
+            </NavLink>
+          </div>
         </div>
-        <div className="block lg:hidden">
+        <div className="block lg:hidden ">
           <button
             id="boton"
             onClick={toggleMenu}
@@ -48,7 +50,7 @@ export function NavBar() {
                 to={nav.href}
                 className={({ isActive }) =>
                   `${
-                    isActive ? "bg-accent" : ""
+                    isActive ? "border-2 border-accent rounded" : ""
                   } p-2 text-lg block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white`
                 }
               >
@@ -58,6 +60,6 @@ export function NavBar() {
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 }
