@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "../assets/img/Captura de pantalla de 2025-01-20 16-24-42.png";
 
 export function Projects() {
